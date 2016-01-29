@@ -1,0 +1,47 @@
+CS-172-02 Project 2
+
+* * * Fill In Your Name * * *
+
+Overview
+
+The goal for this project is to systematically develop a TIC-TAC-TOE application; the process is 
+
+similar to developing Connect-4 and Gomoku which are more challenging. Record your answers as you 
+
+go through following stages of development. Each stage is worth an equal portion of the grade.
+
+Turn in the following items in an email to schaeffer@lclark.edu
+
+This document with your answers
+
+A Java file with your code
+
+1. Describe a simple test plan to determine your application's functionality.
+
+2. List all primitive types you think you will need and what information they will hold. Later this 
+
+list can change.
+
+3. Describe all actions that will read or write to these primitive types. Each action will correspond 
+
+to code comments in subsequent stages.
+
+4. Describe your move encoding, e.g. typing “11” may correspond to the upper-left corner.
+
+5. Code a test program which displays instructions and then accepts one of 9 board positions but 
+
+rejects all other positions. Copy and paste your code here.
+
+6. Code another test program which defines and displace a game board using a two dimensional 
+
+array. Copy and paste your code here.
+
+7. Extending 6., code game state detection logic, e.g. win, draw, ..., and report results with 
+
+appropriate String displays. Copy and paste your code here.
+
+8. Create a complete game. Test and debug until working. Copy and paste your application's 
+
+output. Take a look at the difference between your final version and your predicted primitive 
+
+types and actions in 2. and 3. above. There typically will be some differences.
