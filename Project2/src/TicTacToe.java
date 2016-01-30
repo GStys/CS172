@@ -9,11 +9,12 @@ public class TicTacToe {
 			}
 		}
 		System.out.println(board[1][1] + " | " + board[1][2] + " | " + board[1][3]);
-		System.out.println("---|----|-----");
+		System.out.println("---|----|----");
 		System.out.println(board[2][1] + " | " + board[2][2] + " | " + board[2][3]);
-		System.out.println("---|----|-----");
+		System.out.println("---|----|----");
 		System.out.println(board[3][1] + " | " + board[3][2] + " | " + board[3][3]);
-
+		StdOut.println("Would you like to play a game?");
+		String answer = StdIn.readString();
 	}
 
 }
