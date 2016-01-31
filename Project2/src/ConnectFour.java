@@ -3,6 +3,28 @@ public class ConnectFour {
 
 	public static void main(String[] args) {
 		
+		while (true) {
+			StdOut.println();
+			StdOut.println("Would you like to play a game?");
+			String answer = StdIn.readString();
+			if (answer.equalsIgnoreCase("no") || answer.equalsIgnoreCase("n")) {
+				StdOut.println();
+				StdOut.println("Well... fuck off then.");
+				return;
+			}
+			else if (answer.equalsIgnoreCase("yes") || answer.equalsIgnoreCase("y")) {
+				StdOut.println();
+				StdOut.println("Connect Four:");
+				StdOut.println();
+				break;
+			}
+			else {
+				StdOut.println();
+				StdOut.println("'yes' or 'no', dumbass.");
+				StdOut.println("Lets try this again...");
+			}
+		}
+		
 		String[][] board = new String[7][8];
 		for (int i=1;i<7;i++) {
 			for (int j=1;j<8;j++) {
