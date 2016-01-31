@@ -34,17 +34,18 @@ public class TicTacToe {
 		
 
 		// prints the current board
-		StdOut.println(board[1][1] + " | " + board[1][2] + "| " + board[1][3]);
-		StdOut.println("---|---|---");
-		StdOut.println(board[2][1] + " | " + board[2][2] + "| " + board[2][3]);
-		StdOut.println("---|---|---");
-		StdOut.println(board[3][1] + " | " + board[3][2] + "| " + board[3][3]);
+		StdOut.println("Col: 1   2   3  Row");
+		StdOut.println("    " + board[1][1] + " | " + board[1][2] + "| " + board[1][3] + "  1");
+		StdOut.println("    " + "---|---|---");
+		StdOut.println("    " + board[2][1] + " | " + board[2][2] + "| " + board[2][3] + "  2");
+		StdOut.println("    " + "---|---|---");
+		StdOut.println("    " + board[3][1] + " | " + board[3][2] + "| " + board[3][3] + "  3");
 		StdOut.println();
 		
-		for (int tcount=1;tcount<=9;tcount++) {
+		for (int tCount=1;tCount<=9;tCount++) {
 			
 			// prints which turn it is
-			if (tcount%2 == 0) {	StdOut.println("X's Turn:");	}
+			if (tCount%2 == 0) {	StdOut.println("X's Turn:");	}
 			else {	StdOut.println("O's Turn:");	}
 			
 			while (true) {
@@ -58,7 +59,7 @@ public class TicTacToe {
 					StdOut.println("Try again when you figure out how to count to three.");
 					continue;
 				}
-				if (tcount%2 == 0) { board[r][c] = " X";	}
+				if (tCount%2 == 0) { board[r][c] = " X";	}
 				else {	board[r][c] = " O";	}
 				break;
 			}
