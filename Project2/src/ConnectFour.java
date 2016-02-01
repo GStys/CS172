@@ -74,6 +74,7 @@ public class ConnectFour {
 			}
 			
 			// prints the current board
+			StdOut.println();
 			StdOut.println("Col:  1   2   3   4   5   6   7");
 			StdOut.println("    |---|---|---|---|---|---|---|");
 			for (int i=1;i<7;i++) {
@@ -84,6 +85,8 @@ public class ConnectFour {
 				StdOut.println();
 				StdOut.println("    |---|---|---|---|---|---|---|");
 			}
+			StdOut.println();
+			StdOut.println();
 			StdOut.println();
 			
 			// checks for win
@@ -132,12 +135,9 @@ public class ConnectFour {
 					}
 				}
 			}
-			if (win.equals("X")) {
-				StdOut.println("X's WIN!");
-				return;
-			}
-			if (win.equals("O")) {
-				StdOut.println("O's WIN");
+			if (!(win.equals(" "))) {
+				StdOut.println();
+				StdOut.println(win + "'s WIN!");
 				return;
 			}
 			
