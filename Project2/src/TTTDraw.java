@@ -42,7 +42,7 @@ public class TTTDraw {
 		}
 	}
 	
-	public void board() {
+	public void drawBoard() {
 		//clears screen and draws board
 		StdDraw.setPenRadius(0.02);
         StdDraw.setPenColor(StdDraw.WHITE);
@@ -74,13 +74,10 @@ public class TTTDraw {
 					else {	tempC=3;	}
 					
 					if (board[tempR][tempC].equals(" ")) {
-						StdOut.println("Turn " + tCount);
+						//StdOut.println("Turn " + tCount);
 						r = tempR; c = tempC;
 						board[r][c] = turn;
 						return;
-					} else if (!(r==tempR) && !(c==tempC)) {
-						StdOut.println(board[r][c] + "\n r=" + r + "\n c=" + c);
-						StdOut.println("That spot is filled.");
 					}
 				}
 			}
@@ -91,10 +88,10 @@ public class TTTDraw {
 		if (board[(int) row][(int) col].equals("X")) {
 			StdDraw.line((col*2+0.5)/10, (row*2+1.5)/10, (col*2+1.5)/10, (row*2+0.5)/10);
 			StdDraw.line((col*2+0.5)/10, (row*2+0.5)/10, (col*2+1.5)/10, (row*2+1.5)/10);
-			StdOut.println("placed 'X': " + "col " + col + ", row " + row);
+			//StdOut.println("placed 'X': " + "col " + col + ", row " + row);
 		} else if (board[(int) row][(int) col].equals("O")) {
 			StdDraw.circle((col*2+1)/10, (row*2+1)/10, 0.06);
-			StdOut.println("placed 'O': " + "col " + col + ", row " + row);
+			//StdOut.println("placed 'O': " + "col " + col + ", row " + row);
 		}
 	}
 	
@@ -132,11 +129,8 @@ public class TTTDraw {
 	}
 	
 	public void play() {
-        board();
-        
 		while (tCount<=9) {
-			
-        	board();
+        	drawBoard();
         	if (win==true) {
         		StdDraw.text(0.5, 0.85, turn + "s WIN!!!");
         		checkWin();
@@ -153,8 +147,16 @@ public class TTTDraw {
         	win = checkWin();
         	tCount++;
         }
-    	board();
+		if (win==true) {
+    		StdDraw.text(0.5, 0.85, turn + "s WIN!!!");
+    		checkWin();
+    		StdDraw.show();
+    		return;
+    	}
+    	drawBoard();
 		StdDraw.text(0.4, 0.9, "DRAW");
+		StdDraw.setPenColor(StdDraw.BLUE);
+		StdDraw.circle(0.5, 0.5, 0.35);
 	}
 
 	public static void main(String[] args) {
