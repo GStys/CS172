@@ -4,7 +4,7 @@ public class TTTDraw {
 	public static String[][] board;
 	public static String turn;
 	public static int tCount, r, c;
-	public static boolean win;
+	public static boolean win, check=true;
 	
 	public TTTDraw() {
 		board = new String[4][4];
@@ -16,6 +16,7 @@ public class TTTDraw {
 		turn = "X";
 		tCount = 1;
 		win = false;
+		check = true;
 	}
 	
 	public static boolean gameStart() {
@@ -62,7 +63,7 @@ public class TTTDraw {
 		//player inputs row and column of play and the board[][] value is accordingly changed
 		int tempR=0, tempC=0;
 		while (true) {
-			if (StdDraw.mousePressed()) {
+			if (check==true && StdDraw.mousePressed()) {
 				if ((StdDraw.mouseY() > 0.2) && (StdDraw.mouseY() < 0.8) && (StdDraw.mouseX() > 0.2) && (StdDraw.mouseX() < 0.8)) {
 					
 					if (StdDraw.mouseY() < 0.4) {	tempR=1;	}
@@ -75,12 +76,16 @@ public class TTTDraw {
 					
 					if (board[tempR][tempC].equals(" ")) {
 						//StdOut.println("Turn " + tCount);
+						check=false;
 						r = tempR; c = tempC;
 						board[r][c] = turn;
 						return;
+					} else if (check==true) {
+						StdOut.println("That spot is filled.");
 					}
 				}
 			}
+			if (check==false) {	return;	}
 		}
 	}
 	
@@ -143,6 +148,7 @@ public class TTTDraw {
         	else {	turn = "X";	}
         	
             StdDraw.text(0.1, 0.9, turn + "'s Turn:");
+            check=true;
         	getMove();
         	win = checkWin();
         	tCount++;
