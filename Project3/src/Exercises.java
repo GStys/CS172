@@ -4,6 +4,7 @@ public class Exercises {
 	public Exercises() {
 		// TODO Auto-generated constructor stub
 	}
+<<<<<<< HEAD
 	
 	public static void circleDiagonals(int N, double p, boolean s) {
 		/*
@@ -117,6 +118,12 @@ public class Exercises {
 		circleDiagonals(StdIn.readInt(), 1, true);
 		bouncingBallGrav();
 		
+=======
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+>>>>>>> branch 'master' of https://github.com/GStys/CS172.git
 	}
 
 }
