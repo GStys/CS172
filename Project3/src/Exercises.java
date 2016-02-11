@@ -113,6 +113,7 @@ public class Exercises {
 
 	public static void main(String[] args) {
 		
+		StdOut.println("Enter the number of points for the polygon: ");
 		circleDiagonals(StdIn.readInt(), 1, true);
 		bouncingBallGrav();
 		
