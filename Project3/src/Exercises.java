@@ -39,7 +39,7 @@ public class Exercises {
 				}
 			}
 			if (s) {	spin += Math.PI/32;	}
-			StdDraw.show(20);
+			StdDraw.show(15);
 		}
 	}
 	
