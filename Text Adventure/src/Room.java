@@ -8,12 +8,17 @@ public class Room {
 	// Description of the room
 	private String description;
 	
-	// Adjacent rooms at directions specified
-	private ArrayList neighbors = null;
+	// exits at directions specified
+	private ArrayList<String> exits;
+	
+	// Adjacent rooms at direction of exit.get(same index)
+	private ArrayList<Room> neighbors;
 
 	public Room(String name, String description) {
 		this.name = name;
 		this.description = description;
+		neighbors = new ArrayList<Room>();
+		exits = new ArrayList<String>();
 	}
 	
 	public String getName() {
@@ -24,9 +29,22 @@ public class Room {
 		return description;
 	}
 	
-	public void addNeighbor(String direction, Room name) {
-		neighbors.add(direction);
-		neighbors.add(name);
+	public void addNeighbor(String direction, Room neighbor) {
+		exits.add(direction);
+		neighbors.add(neighbor);
+	}
+	
+	public Room getNeighbor(String direction) {
+		for (int i=0; i<exits.size(); i++) {
+			if (exits.get(i).equals(direction)) {
+				return neighbors.get(i);
+			}
+		}
+		return null;
+	}
+	
+	public String listExits() {
+		return neighbors.toString();
 	}
 
 }
