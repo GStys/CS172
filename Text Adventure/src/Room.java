@@ -13,12 +13,24 @@ public class Room {
 	
 	// Adjacent rooms at direction of exit.get(same index)
 	private ArrayList<Room> neighbors;
+	
+	// Room's treasure
+	private Treasure item;
+	
+	// Room's monster
+	private Monster baddie;
+	
+	// Room's weapon
+	private Weapon excalabur;
 
 	public Room(String name, String description) {
 		this.name = name;
 		this.description = description;
 		neighbors = new ArrayList<Room>();
 		exits = new ArrayList<String>();
+		item = null;
+		baddie = null;
+		excalabur = null;
 	}
 	
 	public String getName() {
@@ -44,7 +56,31 @@ public class Room {
 	}
 	
 	public String listExits() {
-		return neighbors.toString();
+		return exits.toString();
+	}
+
+	public Treasure getTreasure() {
+		return item;
+	}
+	
+	public void setTreasure(Treasure temp) {
+		item = temp;
+	}
+	
+	public Monster getMonster() {
+		return baddie;
+	}
+	
+	public void setMonster(Monster temp) {
+		baddie = temp;
+	}
+	
+	public Weapon getWeapon() {
+		return excalabur;
+	}
+	
+	public void setWeapon(Weapon temp) {
+		excalabur = temp;
 	}
 
 }
