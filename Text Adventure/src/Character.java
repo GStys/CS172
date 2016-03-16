@@ -10,6 +10,12 @@ public class Character {
 	
 	// inventory list
 	private ArrayList inventory;
+	
+	// equipped weapon
+	private Weapon myWeapon;
+	
+	// equipped armor
+	private Armor myArmor;
 
 	public Character(int hp, int strength, int accuracy, int perception) {
 		this.hp = hp;
@@ -23,20 +29,39 @@ public class Character {
 		this.hp = hp;
 	}
 	
+	public int getHp() {
+		return hp;
+	}
+	
 	public void setStrength(int strength) {
 		this.strength = strength;
+	}
+	
+	public int getStrength() {
+		return strength;
 	}
 	
 	public void setAccuracy(int accuracy) {
 		this.accuracy = accuracy;
 	}
 	
+	public int getAccuracy() {
+		return accuracy;
+	}
+	
 	public void setPerception(int perception) {
 		this.perception = perception;
 	}
 	
-	public void add(Object temp) {
-		inventory.add(temp);
+	public int getPerception() {
+		return perception;
+	}
+	
+	public void add(Object item) {
+		if (item.getClass() == myWeapon.getClass()) {
+			
+		}
+		inventory.add(item);
 	}
 
 }
